@@ -69,3 +69,10 @@ int index_of(t_list * lista, int element){
     }
     return -1;
 }
+
+int update(t_list * lista, int index, int element){
+    if (index < 0 || index >= lista.tamanho) return 0;
+
+    lista.list[index] = element;
+    return 1;
+}
