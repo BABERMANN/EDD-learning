@@ -28,3 +28,17 @@ int is_empty(t_list * lista){
 int is_full(t_list * lista){
     return lista->tamanho == lista->max;
 }
+
+ int append(t_list * lista, int element){
+    if(is_full(lista)) return 0;
+
+    if(is_empty(lista)){
+    lista->list[0] = element;
+    lista->tamanho++;
+    return 1;
+    }
+
+    lista->list[lista->tamanho] = element;
+    lista->tamanho++;
+    return 1;
+ }
