@@ -48,5 +48,17 @@ int is_full(t_list * lista){
     lista->list[index] = element;
     lista->tamanho++;
     return 1;
-
  }
+
+
+int remove_by_index(t_list * lista,int index){
+    if(is_empty(lista) || index < 0 || index >= lista->tamanho) return 0;
+
+    for(int i = index; i < lista->tamanho - 1; i++){
+        lista->list[i] = lista->list[i + 1];
+    }
+
+    lista->tamanho--;
+    return 1;
+
+}
