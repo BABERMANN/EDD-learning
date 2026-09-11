@@ -38,7 +38,7 @@ int is_full(t_list * lista){
  }
 
  int inserir_element(t_list * lista,int index, int element){
-    if(is_full(lista)) return 0;
+    if(is_full(lista) || index < 0) return 0;
 
     if(index >= lista->tamanho + 1) return 0;
 
@@ -71,8 +71,14 @@ int index_of(t_list * lista, int element){
 }
 
 int update(t_list * lista, int index, int element){
-    if (index < 0 || index >= lista.tamanho) return 0;
+    if (index < 0 || index >= lista->tamanho) return 0;
 
-    lista.list[index] = element;
+    lista->list[index] = element;
     return 1;
+}
+
+int get_index(t_list * lista, int index){
+    if (index < 0 || index >= lista->tamanho) return -1;
+
+    return lista->list[index];
 }
