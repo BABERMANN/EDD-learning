@@ -82,3 +82,25 @@ int get_index(t_list * lista, int index){
 
     return lista->list[index];
 }
+
+int remove_by_element(t_list * lista, int element){
+    for(int i = 0; i < lista->tamanho; i++){
+        if(lista->list[i] == element){
+            for(int j = i; j < lista->tamanho - 1; j++){
+                lista->list[j] = lista->list[j + 1];
+            }
+            lista->tamanho--;
+            return 1;
+        }
+    }
+    return 0;
+}
+
+
+int remove_by_element_short(t_list * lista, int element){
+    int pos = index_of(lista,element);
+    if(pos == -1) return 0;
+    remove_by_index(lista,pos);
+    return 1;
+}
+
