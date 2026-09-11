@@ -32,13 +32,21 @@ int is_full(t_list * lista){
  int append(t_list * lista, int element){
     if(is_full(lista)) return 0;
 
-    if(is_empty(lista)){
-    lista->list[0] = element;
-    lista->tamanho++;
-    return 1;
-    }
-
     lista->list[lista->tamanho] = element;
     lista->tamanho++;
     return 1;
+ }
+
+ int inserir_element(t_list * lista,int index, int element){
+    if(is_full(lista)) return 0;
+
+    if(index >= lista->tamanho + 1) return 0;
+
+    for(int i = lista->tamanho; i > index; i--){
+        lista->list[i] = lista->list[i - 1];
+    }
+    lista->list[index] = element;
+    lista->tamanho++;
+    return 1;
+
  }
