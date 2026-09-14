@@ -104,3 +104,50 @@ int remove_by_element_short(t_list * lista, int element){
     return 1;
 }
 
+
+int main() {
+    t_list *lista = cria_list(5);
+
+    printf("Lista vazia? %d\n", is_empty(lista)); 
+
+    append(lista, 3);
+    append(lista, 7);
+    append(lista, 1);
+    append(lista, 5);
+    printf("Depois dos appends: ");
+    print_list(lista); 
+
+    printf("Lista cheia? %d\n", is_full(lista)); 
+
+    inserir_element(lista, 1, 10);
+    printf("Depois do insert(1, 10): ");
+    print_list(lista); 
+
+    printf("Lista cheia agora? %d\n", is_full(lista)); 
+
+    int falhou = append(lista, 99);
+    printf("Tentei append numa lista cheia, retornou: %d\n", falhou); 
+
+    printf("index_of(7) = %d\n", index_of(lista, 7)); 
+    printf("index_of(999) = %d\n", index_of(lista, 999)); 
+
+    update(lista, 0, 30);
+    printf("Depois do update(0, 30): ");
+    print_list(lista); 
+
+    printf("get_index(2) = %d\n", get_index(lista, 2)); 
+    printf("get_index(99) = %d\n", get_index(lista, 99)); 
+
+    remove_by_index(lista, 1);
+    printf("Depois do remove_by_index(1): ");
+    print_list(lista); 
+
+    remove_by_element_short(lista, 1);
+    printf("Depois do remove_by_element_short(1): ");
+    print_list(lista); 
+
+    int nao_achou = remove_by_element_short(lista, 999);
+    printf("Tentei remover 999 (nao existe), retornou: %d\n", nao_achou); 
+
+    return 0;
+}
