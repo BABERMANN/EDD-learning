@@ -34,5 +34,13 @@ int enqueue(t_fila * fila, int element){
     fila->list[fila->fim] = element;
     fila->fim = (fila->fim + 1) % fila->max;
     fila->qtd++;
+    return 1;
+}
 
+int dequeue(t_fila * fila, int * element){
+    if(is_empty(fila)) return 0;
+    *element = fila->list[fila->inicio];
+    fila->inicio = (fila->inicio + 1) % fila->max;
+    fila->qtd--;
+    return 1;
 }
