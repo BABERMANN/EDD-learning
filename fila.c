@@ -44,3 +44,13 @@ int dequeue(t_fila * fila, int * element){
     fila->qtd--;
     return 1;
 }
+
+void print_fila(t_fila* fila){
+    if(is_empty(fila)) printf("tem nada");
+    else{
+        for(int i = 0; i < fila->qtd; i++){
+            int valor = (fila->inicio + i) % fila->max;
+            printf("%d",fila->list[valor]);
+        }
+    }
+}
