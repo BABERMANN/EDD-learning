@@ -28,3 +28,11 @@ int is_empty(t_fila * fila){
 int is_full(t_fila * fila){
     return fila->qtd == fila->max;
 }
+
+int enqueue(t_fila * fila, int element){
+    if(is_full(fila)) return 0;
+    fila->list[fila->fim] = element;
+    fila->fim = (fila->fim + 1) % fila->max;
+    fila->qtd++;
+
+}
