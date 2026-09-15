@@ -20,3 +20,11 @@ t_fila * cria_fila(int tamanho){
     
     return fila;
 }
+
+int is_empty(t_fila * fila){
+    return fila->qtd == 0;
+}
+
+int is_full(t_fila * fila){
+    return fila->qtd == fila->max;
+}
