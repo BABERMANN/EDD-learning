@@ -29,3 +29,10 @@ int push(t_pilha * pilha, int element){
     pilha->pilha[pilha->top_index] = element;
     return 1;
 }
+
+int pop(t_pilha * pilha, int * removed_element){
+    if(is_empty(pilha)) return 0;
+    *removed_element = pilha->pilha[pilha->top_index];
+    pilha->top_index--;
+    return 1;
+}
