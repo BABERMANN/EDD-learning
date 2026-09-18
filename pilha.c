@@ -14,3 +14,11 @@ t_pilha * create_pilha(int maximo){
     pilha->top_index = -1;
     return pilha;
 }
+
+int is_full(t_pilha * pilha){
+    return pilha->max == pilha->top_index + 1;
+}
+
+int is_empty(t_pilha * pilha){
+    return pilha->top_index == -1;
+}
