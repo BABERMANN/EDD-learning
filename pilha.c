@@ -22,3 +22,10 @@ int is_full(t_pilha * pilha){
 int is_empty(t_pilha * pilha){
     return pilha->top_index == -1;
 }
+
+int push(t_pilha * pilha, int element){
+    if (is_full(pilha)) return 0;
+    pilha->top_index++;
+    pilha->pilha[pilha->top_index] = element;
+    return 1;
+}
