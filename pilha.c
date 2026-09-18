@@ -36,3 +36,9 @@ int pop(t_pilha * pilha, int * removed_element){
     pilha->top_index--;
     return 1;
 }
+
+int peek(t_pilha * pilha, int * topo){
+    if(is_empty(pilha)) return 0;
+    *topo = pilha->pilha[pilha->top_index];
+    return 1;
+}
