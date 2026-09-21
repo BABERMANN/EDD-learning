@@ -21,4 +21,8 @@ t_list * create_list(){
     return lista;
 }
 
+int is_empty(t_list * lista){
+    return lista->size == 0;
+}
+
 
