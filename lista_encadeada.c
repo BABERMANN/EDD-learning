@@ -41,3 +41,12 @@ int append(t_list * lista, int element){
     return 1;
 }
 
+void print_list(t_list * lista){
+t_node * aux = lista->head;
+while(aux != NULL){
+    printf("%d",aux->item);
+    aux = aux->next;
+}
+
+}
+
