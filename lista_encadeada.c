@@ -25,4 +25,18 @@ int is_empty(t_list * lista){
     return lista->size == 0;
 }
 
+int append(t_list * lista, int element){
+    t_node * new_node = malloc(sizeof(t_node));
+    new_node->item = element;
+    new_node->next = NULL;
+
+    if(is_empty(lista)){
+        lista->head = new_node;
+    }else{
+        lista->tail->next = new_node;    
+    }
+    lista->size++;
+
+    return 1;
+}
 
