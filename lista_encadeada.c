@@ -27,14 +27,15 @@ int is_empty(t_list * lista){
 
 int append(t_list * lista, int element){
     t_node * new_node = malloc(sizeof(t_node));
-    new_node->item = element;
-    new_node->next = NULL;
+    new_node->item = element; // conteudo guardado
+    new_node->next = NULL; // feito sempre no principio, pois cada nó novo nao sabe o proximo elemento
 
     if(is_empty(lista)){
-        lista->head = new_node;
+        lista->head = new_node; // primeiro elemento sempre vai ser definido como head
     }else{
         lista->tail->next = new_node;    
     }
+    lista->tail = new_node;
     lista->size++;
 
     return 1;
