@@ -12,4 +12,13 @@ typedef struct{
     int size;
 }t_list;
 
+t_list * create_list(){
+    t_list * lista = malloc(sizeof(t_list));
+    
+    lista->head = NULL;
+    lista->tail = NULL;
+    lista->size = 0;
+    return lista;
+}
+
 
