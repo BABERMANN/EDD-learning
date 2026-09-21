@@ -103,3 +103,15 @@ int remove_item(t_list *lista, t_node *node_to_remove)
     lista->size--;
     return 1;
 }
+
+t_node * get_node_item(t_list * lista, int element){
+    if(is_empty(lista)) return NULL;
+
+    t_node * aux = lista->head;
+
+    while(aux != NULL && aux->item != element){
+        aux = aux->next;
+    }
+
+    return aux;
+}
