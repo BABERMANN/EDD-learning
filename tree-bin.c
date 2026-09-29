@@ -11,3 +11,14 @@ typedef struct{
     struct _node *root;
     int qtd_nos;
 }t_tree;
+
+t_tree * create_tree(){
+    t_tree * tree = malloc(sizeof(t_tree));
+
+    if(tree == NULL) exit(1); // verifica se o malloc conseguiu alocar, caso nao, exit(1)
+
+    tree->root = NULL;
+    tree->qtd_nos = 0;
+
+    return tree;
+}
