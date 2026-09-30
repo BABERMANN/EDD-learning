@@ -94,3 +94,4 @@ int insert_right(t_node *node_father, char letra)
 
     return 1;
 }
+
