@@ -54,7 +54,8 @@ int insert_root(t_tree *tree, char letra)
 
     t_node *node = create_node(letra);
 
-    if(node == NULL) return 0;
+    if (node == NULL)
+        return 0;
 
     tree->root = node;
     tree->qtd_nos++;
@@ -62,3 +63,18 @@ int insert_root(t_tree *tree, char letra)
     return 1;
 }
 
+int insert_left(t_node *node_father, char letra)
+{
+    if (node_father == NULL)
+        return 0;
+
+    if (node_father->esq != NULL)
+        return 0;
+
+    node_father->esq = create_node(letra);
+
+    if (node_father->esq == NULL)
+        return 0;
+
+    return 1;
+}
