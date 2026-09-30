@@ -11,7 +11,6 @@ typedef struct _node
 typedef struct
 {
     struct _node *root;
-    int qtd_nos;
 } t_tree;
 
 t_tree *create_tree()
@@ -21,14 +20,13 @@ t_tree *create_tree()
         exit(1); // verifica se o malloc conseguiu alocar, caso nao, exit(1)
 
     tree->root = NULL;
-    tree->qtd_nos = 0;
 
     return tree;
 }
 
 int is_empty(t_tree *tree)
 {
-    return tree->root == NULL;
+    return tree == NULL || tree->root == NULL;
 }
 
 t_node *create_node(char letra)
@@ -58,7 +56,6 @@ int insert_root(t_tree *tree, char letra)
         return 0;
 
     tree->root = node;
-    tree->qtd_nos++;
 
     return 1;
 }
@@ -94,4 +91,5 @@ int insert_right(t_node *node_father, char letra)
 
     return 1;
 }
+
 
