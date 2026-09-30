@@ -26,6 +26,12 @@ t_tree *create_tree()
     return tree;
 }
 
+int is_empty(t_tree * tree){
+    return tree->root == NULL;
+}
+
+
+
 t_node *create_node(char letra)
 {
     t_node *node = malloc(sizeof(t_node));
@@ -37,4 +43,16 @@ t_node *create_node(char letra)
     node->esq = NULL;
 
     return node;
+}
+
+int insert_root(t_tree * tree, char letra){
+    if(tree == NULL) return 0;
+
+    if(!is_empty(tree)) return 0;
+    
+    t_node * node = create_node(letra);
+
+    tree->root = node;
+
+    return 1;
 }
