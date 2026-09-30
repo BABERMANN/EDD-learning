@@ -78,3 +78,19 @@ int insert_left(t_node *node_father, char letra)
 
     return 1;
 }
+
+int insert_right(t_node *node_father, char letra)
+{
+    if (node_father == NULL)
+        return 0;
+
+    if (node_father->dir != NULL)
+        return 0;
+
+    node_father->dir = create_node(letra);
+
+    if (node_father->dir == NULL)
+        return 0;
+
+    return 1;
+}
